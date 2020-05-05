@@ -19,8 +19,16 @@
        
        if (empty($size) or empty($color) or empty($message)){
 
-              echo '! Veuillez saisir une taille, une couleur, un message !';}
+              echo '! Veuillez saisir une taille, une couleur, un message !';
+       }
        
+       if (empty($size) or empty($color)) {
+              
+              $size = 12;
+              $color = 0;
+              $message = " Aucun message";
+              echo $message;
+       }
        
 ?>
        
@@ -30,6 +38,8 @@
 
        
        <p><a href = "ex2.php?message=Message_3&size=50&color=%230000ff">"Message_3" en bleu + taille 50px</a></p>
+       
+       
        
        <form method="GET">
               <label for="size">Size : </label>
