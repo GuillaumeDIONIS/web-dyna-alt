@@ -17,8 +17,11 @@
       
        echo 'Le message souhaité est le suivant  : <div style="font-size:'.$size.'px; color:'.$color.'"> '.$message.'</div>';
        
-           
+       if (empty($size) or empty($color) or empty($message)){
 
+              echo '! Veuillez saisir une taille, une couleur, un message !';}
+       
+       
 ?>
        
        <p><a href = "ex2.php?message=Message_1&size=15&color=%23ff0000">"Message_1" en rouge + taille 15px</a></p>
@@ -42,6 +45,7 @@
               <input type="submit" value="Valider">
               
        </form>
+       
        
        </body>
 </html>
