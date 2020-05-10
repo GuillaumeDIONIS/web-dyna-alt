@@ -37,7 +37,8 @@ if(!empty($_GET['colonnes']))$colonnes=$_GET['colonnes'];
     
     echo'</tbody></table>';
     
-} ?>
+} 
+?>
     
 
 
