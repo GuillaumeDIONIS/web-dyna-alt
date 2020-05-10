@@ -7,22 +7,32 @@
 </head>
 <body>
 <?php
-        $size = empty($size);
-        $color = empty($color);
-        $message = empty($message);
-        
+       $size = 12;
+       $color = 0;
+       $message = "Pas de message";
        
-         $size = $_GET["size"];
        
-         $color = $_GET["color"];
        
-         $message = $_GET["message"];
-       
-      
-       echo 'Le message souhaité est le suivant  : <div style="font-size:'.$size.'px; color:'.$color.'"> '.$message.'</div>';
-       
-       if (empty($size) or empty($color) or empty($message)){
+       if(!empty($_GET['size']))$size=$_GET['size'];
+       if(!empty($_GET['color']))$color=$_GET['color'];
+       if(!empty($_GET['message']))$message=$_GET['message'];
+       if(isset($_GET['Bouton_+'])){
+              
+              $size++;
+              
+       }
+       if(isset($_GET['Bouton_-'])){
 
+              $size--;
+
+       }
+      
+       
+       
+       if(!empty($_GET)) {
+              
+              echo 'Le message souhaité est le suivant  : <div style="font-size:'.$size.'px; color:'.$color.'"> '.$message.'</div>';
+       }else{
               echo '! Veuillez saisir une taille, une couleur et un message !';
        }
        
@@ -37,20 +47,26 @@
        
        <p><a href = "ex2.php?message=Message_3&size=50&color=%230000ff">"Message_3" en bleu + taille 50px</a></p>
        
-       <a href = "ex2.php?message=<?=urlencode($message)?>&size=<?$size+1?>&color=<?=urlencode($color)?>"><button>+</button></a>
-       <a href = "ex2.php?message=<?=urlencode($message)?>&size=<?$size-1?>&color=<?=urlencode($color)?>"><button>-</button></a>
+
+       
+       
+              
        
        <form method="GET">
+              
+              <input type="submit" value="+" name="Bouton_+"> 
+              <input type="submit" value="-" name="Bouton_-">
+              
               <label for="size">Size : </label>
-              <input type="number" value="10" name="size" id="size">
+              <input type="number" value=<?php echo $size; ?> name="size" id="size">
               
               
               <label for="color">Color : </label>
-              <input type="color" value="" name="color" id="color">
+              <input type="color" value=<?php echo $color; ?> name="color" id="color">
               
               
               <label for="message">Message : </label>
-              <input type="text" value="" name="message" id="message">
+              <input type="text" value=<?php echo $message; ?> name="message" id="message">
               <input type="submit" value="Valider">
               
        </form>
