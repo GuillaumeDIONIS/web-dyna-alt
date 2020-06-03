@@ -1,13 +1,20 @@
 <?php
 namespace controllers;
+
+use ws\controllers\AbstractWsController;
  /**
  * Controller MainController
  * @get("_default","name"=>"Home")
  */
-class MainController extends ControllerBase{
+class MainController extends AbstractWsController {
 
 	public function index(){
-		$this->loadView("MainController/index.html");
+		$menu=$this->getMenu('Home');
+		$messages=$this->dataProvider->getMessages();
+		$content=$this->dataProvider->getPageContent('Home');
+		var_dump($menu);
+		var_dump($messages);
+		var_dump($content);
 	}
 
 	/**
@@ -41,5 +48,7 @@ class MainController extends ControllerBase{
 	public function sendMessage(){
 
 		$this->loadView('MainController/sendMesasge.html');
+		
+		
 }
 }
