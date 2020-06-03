@@ -1,1 +1,80 @@
-<!--View associated to contactForm() action of MainController controller -->
+{% extends "main/vBase.html" %}
+{%block body%}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html><head>
+    <base href="https://ubiquity-ws-sample.herokuapp.com">
+    <meta charset="UTF-8">
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    <title>cms</title>
+    <link href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.3/dist/semantic.min.css" type="text/css" rel="stylesheet">
+    <link href="public/assets/css/style.css" type="text/css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="ui fixed inverted menu">
+            <div class="ui container">
+                <a href="#" class="header item">
+                    <img class="logo" src="/public/assets/img/logo.png">
+                    Dpt R&amp;T
+                </a>
+            </div>
+        </div>
+        <div class="ui main container">
+            <div class="ui icon success message">
+                <i class="mail icon"></i>
+                <div class="content">
+                    <div class="header">
+                        Message sent from <b>  ()</b>
+                    </div>
+
+                    <hr>
+                    <a href="" class="ui positive button">Back to Home</a>
+                </div>
+            </div>
+        </div>
+        <div class="ui inverted segment">
+            <div class="ui inverted vertical footer segment">
+                <div class="ui center aligned container">
+                    <div class="ui inverted section divider"></div>
+                    <img src="/public/assets/img/logo.png" class="ui centered mini image">
+                    <div class="ui horizontal inverted small divided link list">
+                        <a class="item" href="#">Site Map</a>
+                        <a class="item" href="contact/">Contact Us</a>
+                        <a class="item" href="#">Terms and Conditions</a>
+                        <a class="item" href="#">Privacy Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.3/dist/semantic.min.js"></script>
+
+    </body></html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+{%endblock%}

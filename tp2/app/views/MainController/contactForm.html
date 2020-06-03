@@ -1,10 +1,80 @@
 {% extends "main/vBase.html" %}
 {%block body%}
-    <h2 class="ui header">
-        <i class="mail icon"></i>
-        <div class="content">
-            Contats
-            <div class="sub_header">Contact us</div>
+<html><head>
+    <base href="https://ubiquity-ws-sample.herokuapp.com">
+    <meta charset="UTF-8">
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    <title>cms</title>
+    <link href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.3/dist/semantic.min.css" type="text/css" rel="stylesheet">
+    <link href="public/assets/css/style.css" type="text/css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="ui fixed inverted menu">
+            <div class="ui container">
+                <a href="#" class="header item">
+                    <img class="logo" src="/public/assets/img/logo.png">
+                    Dpt R&amp;T
+                </a>
+                <a href="" class=" item">
+                    Home
+                </a>
+                <a href="news/" class=" item">
+                    News
+                </a>
+                <a href="partners/" class=" item">
+                    Partners
+                </a>
+                <a href="contact/" class="active item">
+                    Contact
+                </a>
+            </div>
         </div>
-</h2>
+        <div class="ui main container">
+            <h2 class="ui header">
+                <i class="mail icon"></i>
+                <div class="content">
+                    Contact
+                    <div class="sub header">Contact us</div>
+                </div>
+            </h2>	
+            <form class="ui form segment" method="post" action="/sendMessage">
+                <div class="equal width fields">
+                    <div class="field">
+                        <label>Firstname</label> <input type="text" name="firstname" required="">
+                    </div>
+                    <div class="field">
+                        <label>Lastname</label> <input type="text" name="lastname" required="">
+                    </div>
+                </div>
+                <div class="field">
+                    <label>Your message</label>
+                    <textarea placeholder="Please write us your message..." rows="5" name="content" required=""></textarea>
+                </div>
+                <div class="field">
+                    <label>Email</label>
+                    <input type="email" name="email" required="">
+                </div>
+                <hr>
+                <button class="ui positive icon button bt200"><i class="ui mail icon"></i> Submit message</button>
+                <a href="" class="ui icon button bt200"><i class="ui close icon"></i> Cancel &amp; back to Home</a>
+            </form>
+        </div>
+        <div class="ui inverted segment">
+            <div class="ui inverted vertical footer segment">
+                <div class="ui center aligned container">
+                    <div class="ui inverted section divider"></div>
+                    <img src="/public/assets/img/logo.png" class="ui centered mini image">
+                    <div class="ui horizontal inverted small divided link list">
+                        <a class="item" href="#">Site Map</a>
+                        <a class="item" href="contact/">Contact Us</a>
+                        <a class="item" href="#">Terms and Conditions</a>
+                        <a class="item" href="#">Privacy Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.3/dist/semantic.min.js"></script>
+
+    </body></html>
 {%endblock%}
