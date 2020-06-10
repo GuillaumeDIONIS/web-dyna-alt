@@ -51,11 +51,11 @@ class FlashmobsController extends ControllerBase{
 
 		$form=URequest::getDatas();
 
-		$event = new Rassemblement();
-		$event->setNom($form['nom']);
-		$event->setLieu($form['lieu']);
-		$event->setDateHeure($form['date']);
-		$event->setActif(true);
+		$e = new Rassemblement();
+		$e->setNom($form['nom']);
+		$e->setLieu($form['lieu']);
+		$e->setDateHeure($form['date']);
+		$e->setActif(true);
 		if (!DAO::insert($event)){
 			$this->loadView('FlashmobsController/erreur.html',["nom"=>$form['nom']]);
 		} else {
