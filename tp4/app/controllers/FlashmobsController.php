@@ -6,19 +6,34 @@ use Ubiquity\utils\http\UCookie;
 /**
  * Controller FlashmobsController
  */
-
-
 class FlashmobsController extends ControllerBase{
 
 	public function index(){
-		$message="";
+
 		if(!UCookie::exists("flash-mob")){
-			$message="Il s'agit de votre première visite, bienvenue!";
+			$message="Il s'agit de votre première visite, bienvenue !";
 			UCookie::set('flash-mob',true);
 		} elseif(UCookie::exists("flash-mob")) {
-			$message="Merci de votre retour!";
+			$message="Merci de votre retour !";
 		}
+
+		
+		
 		
 		$this->loadView('FlashmobsController/index.html',["message"=>$message]);
+
 	}
+
+	
+	
+	
+	/**
+	 *@get("flashmobs/create","name"=>"flashmobs.create")
+	 */
+	public function flashmobsForm(){
+
+		$this->loadView('FlashmobsController/flashmobsForm.html');
+
+	}
+
 }
