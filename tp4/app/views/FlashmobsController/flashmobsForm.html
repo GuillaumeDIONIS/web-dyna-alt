@@ -1,0 +1,32 @@
+{%block body%}
+<table class="ui table">
+    <thead id="" class="">
+        <tr>
+            <th class="ui header block inverted">Création d'un évènement !</th>
+        </tr>
+    </thead>
+    <tbody id="" class="">
+        <tr>
+            <td>
+                <form class="ui form" method="post" action="/flashmobs/create/do">
+                    <div class="equal width fields">
+                        <div class="field">
+                            <label>Noms:</label> <input name="nom" required="">
+                        </div>
+                        <div class="field">
+                            <label>Date:</label> <input type="datetime-local" name="date" required="">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label>Lieu:</label>
+                        <textarea rows="2" name="content" required=""></textarea>
+                    </div>
+                    <hr class="">
+                    <button class="ui positive icon button">Créer l'évènement !</button>
+                    <a href="" class="ui icon button">Annuler puis retourner à l'acceuil</a>
+                </form>
+            </td>
+        </tr>
+    </tbody>
+</table>
+{%endblock%}
